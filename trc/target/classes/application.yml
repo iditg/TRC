@@ -1,0 +1,23 @@
+properties:
+
+server:
+  servlet:
+    context-path: /trc/
+  port: ${PORT:8080}
+spring:
+  application:
+    name: ${RETAILER_NAME:trc}
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: ${MAX_FILE_SIZE:1MB}
+      max-request-size: ${MAX_FILE_SIZE:1MB}
+logging:
+  level:
+    org.hibernate:
+      SQL: ${LOG_LEVEL_DB:debug}
+      type:
+        descriptor:
+          sql: ${LOG_LEVEL_DB:debug}
+  register-shutdown-hook: true
